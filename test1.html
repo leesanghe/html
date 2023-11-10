@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- HTML 및 CSS 코드는 여기에 위치합니다. -->
+    
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+    <script>
+        // 데이터 배열 (예제 데이터)
+        var data = [
+            { year: 2020, region: "Region A", value: 50 },
+            { year: 2020, region: "Region B", value: 30 },
+            { year: 2021, region: "Region A", value: 60 },
+            { year: 2021, region: "Region B", value: 40 },
+            // 추가 데이터를 여기에 추가할 수 있습니다.
+        ];
+
+        // 그래프 업데이트 함수
+        function updateGraph(year, region) {
+            // 선택한 연도와 지역에 해당하는 데이터 필터링
+            var filteredData = data.filter(function (d) {
+                return d.year === year && d.region === region;
+            });
+
+            // D3.js를 사용하여 그래프 생성 또는 업데이트
+            // 이 부분에서 D3.js를 사용하여 그래프를 생성하거나 업데이트하는 코드를 작성합니다.
+            // 예를 들어, 새로운 데이터를 바탕으로 그래프를 그리고 SVG 요소를 업데이트합니다.
+        }
+
+        // "조회" 버튼 클릭 이벤트 핸들러
+        function onQueryButtonClick() {
+            var selectedYear = document.getElementById("yearSelector").value;
+            var selectedRegion = document.getElementById("regionSelector").value;
+            updateGraph(selectedYear, selectedRegion);
+        }
+    </script>
+</head>
+<body>
+    <!-- 그래프를 표시할 div 요소 -->
+    <div id="graph"></div>
+
+    <!-- 연도 선택 옵션 -->
+    <select id="yearSelector">
+        <option value="2020">2020</option>
+        <option value="2021">2021</option>
+        <!-- 다른 연도 옵션을 필요에 따라 추가할 수 있습니다. -->
+    </select>
+
+    <!-- 지역 선택 옵션 -->
+    <select id="regionSelector">
+        <option value="Region A">Region A</option>
+        <option value="Region B">Region B</option>
+        <!-- 다른 지역 옵션을 필요에 따라 추가할 수 있습니다. -->
+    </select>
+
+    <!-- "조회" 버튼 -->
+    <button onclick="onQueryButtonClick()">조회</button>
+
+    <!-- HTML 표현은 여기에 추가할 수 있습니다. -->
+</body>
+</html>

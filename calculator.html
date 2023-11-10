@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <script src="https://d3js.org/d3.v6.min.js"></script>
+        
+        <style>
+             body {
+                font-family: Arial, sans-serif;
+                margin: 0;
+                padding: 0;
+                position: relative;
+                background-image: url('./image/부끄꼼.jpg'); /* 기존 배경 이미지 */
+                background-size: cover; /* 배경 이미지 크기 조절 (화면에 맞게 확장) */
+                background-repeat: no-repeat; /* 배경 이미지 반복 없음 */
+            }
+            body::after { /*메인화면띄우고 화면한쪽에 이미지 하나 넣을까해서*/
+                content: ""; /* 가상 요소를 생성 */
+                position: absolute;
+                top: 300px;
+                left: 100px;
+                width: 1000px; /* 추가 이미지의 가로 크기 */
+                height: 1000px; /* 추가 이미지의 세로 크기 */
+                /* background-image: url('./image/graph.png'); 추가 이미지 */
+                background-size: contain; /* 추가 이미지 크기 조절 (비율 유지) */
+                background-repeat: no-repeat; /* 추가 이미지 반복 없음 */
+            }
+             header {
+                background-color: #333; /* 네비바 배경색 */
+                color: #fff; /* 텍스트 색상 */
+                padding: 10px; /* 네비바 패딩 */
+                display: flex; /* 팀 이름과 네비게이션 바를 가로로 나란히 표시 */
+                justify-content: space-between; /* 팀 이름과 네비게이션 바를 좌우로 정렬 */
+                align-items: center; /* 수직 가운데 정렬 */
+            }
+            header h1 a {                
+                color: white; /* 텍스트 색상 */              
+            }
+            nav {
+                background-color: #444; /* 네비바 배경색 */
+                color: #fff; /* 텍스트 색상 */
+                text-align: center; /* 네비바 내용을 가운데 정렬 */
+                padding: 10px; /* 네비바 패딩 */
+                text-decoration: none; /* 링크 밑줄 제거 */
+                margin: 0 auto;
+            }
+            nav a {
+                
+                text-decoration: none; /* 링크 밑줄 제거 */
+                color: #fff; /* 링크 텍스트 색상 */
+                margin: 20px; /* 링크 간 여백 */
+            }
+            nav a:hover{
+            background-color: #333;
+            }
+            select, button {
+                padding: 10px;
+                margin: 10px;
+                border: none;
+                background-color: #444;
+                color: #fff;
+            }
+    
+            select {
+                width: 220px;
+            }
+    
+            button {
+                cursor: pointer;
+            }
+    
+           body h1{
+            color: white;
+           }
+           .result-container{
+            color : white;
+           }
+           #carbon-emission {
+            color: greenyellow;
+           }
+           .input-container {
+            margin: 10px 0;
+           }
+           label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="number"] {
+            width: 30%;
+            padding: 14px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px 20px;
+            border: none;
+            background-color: #0077b6;
+            color: #fff;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        #result-container {
+            margin: 20px 0;
+        }
+
+         
+        </style>
+        <header>
+            <h1><a href="main.html">CARINA</a></h1>
+            
+            <nav>
+                <a href="glaph.html">지역별 탄소배출량</a>
+                <a href="calculator.html">탄소배출량 시뮬레이터</a>
+                <a href="#">전력 예측 모델</a>
+                <a href="#">탄소포인트제도</a>
+                <a href="#">환경뉴스</a>
+                <a href="#">게시판</a>
+                <a href="#" class="login-link"> <img src=" " alt="로그인"></a>
+            </nav>
+        </header> 
+        
+    
+</head>
+<body>
+    <h1>에너지 탄소발생량 계산기</h1>
+    
+    <div class="input-container">
+        <label for="electric-usage">전기 사용량 (kWh/월):</label>
+        <input type="number" id="electric-usage" placeholder="전기 사용량을 입력하세요">
+    </div>
+    <div class="input-container">
+        <label for="gas-usage">가스 사용량 (m3/월):</label>
+        <input type="number" id="gas-usage" placeholder="가스 사용량을 입력하세요">
+    </div>
+    <div class="input-container">
+        <label for="water-usage">수도 사용량 (m3/월):</label>
+        <input type="number" id="water-usage" placeholder="수도 사용량을 입력하세요">
+    </div>
+
+    <button id="calculate-button">계산</button>
+
+    <div id="result-container">
+        <p>탄소 발생량: <span id="carbon-emission">0</span> kg CO2</p>
+    </div>
+   
+</body>
+</html>

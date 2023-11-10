@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>팀 웹페이지</title>
+    <style>
+        /* CSS 스타일링 */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            position: relative;
+            background-image: url('./image/image1.jpg'); /* 기존 배경 이미지 */
+            background-size: cover; /* 배경 이미지 크기 조절 (화면에 맞게 확장) */
+            background-repeat: no-repeat; /* 배경 이미지 반복 없음 */
+        }
+        body::after { /*메인화면띄우고 화면한쪽에 이미지 하나 넣을까해서*/
+            content: ""; /* 가상 요소를 생성 */
+            position: absolute;
+            top: 300px;
+            right: 250px;
+            width: 500px; /* 추가 이미지의 가로 크기 */
+            height: 500px; /* 추가 이미지의 세로 크기 */
+            background-image: url(''); /* 추가 이미지 */
+            background-size: contain; /* 추가 이미지 크기 조절 (비율 유지) */
+            background-repeat: no-repeat; /* 추가 이미지 반복 없음 */
+        }
+        header {
+            /* 나머지 스타일은 이전 코드와 동일하게 유지 */
+            background-color: rgba(68, 68, 68, 0.7);
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            text-decoration: none;
+        }
+        header h1 {
+            margin: 0;
+        }
+        nav {
+            background-color: rgba(68, 68, 68, 0.7);
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            text-decoration: none;
+            margin: 0 auto;
+        }
+        nav a {
+            text-decoration: none;
+            color: #fff;
+            margin: 20px;
+        }
+        nav a:hover{
+            background-color: #333;
+        }
+        .login-link {
+            margin-right: 0px; /* 로그인 링크를 우측으로 밀어줍니다 */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>CARINA<a href="main.html"></a></h1>
+        
+        <nav>
+            <a href="glaph.html">지역별 탄소배출량</a>
+            <a href="calculator.html">탄소배출량 시뮬레이터</a>
+            <a href="#">전력 예측 모델</a>
+            <a href="#">탄소포인트제도</a>
+            <a href="#">환경뉴스</a>
+            <a href="#">게시판</a>
+            <a href="#" class="login-link"> <img src=" " alt="로그인"></a>
+        </nav>
+        
+    </header>
+</body>
+</html>
